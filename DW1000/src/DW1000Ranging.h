@@ -67,6 +67,8 @@
 #define DEBUG false
 #endif
 
+#define RANGE_LEN 21
+
 
 class DW1000RangingClass {
 public:
@@ -205,6 +207,8 @@ private:
 	
 	//Utils
 	static float filterValue(float value, float previousValue, uint16_t numberOfElements);
+
+
 };
 
 extern DW1000RangingClass DW1000Ranging;

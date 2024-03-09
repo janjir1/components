@@ -52,6 +52,14 @@ public:
 	void setRXPower(float power);
 	void setFPPower(float power);
 	void setQuality(float quality);
+
+	void setRXPPoll(float power);
+	void setRXPPollAck(float power);
+	void setRXPRange(float power);
+
+	void setFPPPoll(float power);
+	void setFPPPollAck(float power);
+	void setFPPRange(float power);
 	
 	void setReplyDelayTime(uint16_t time) { _replyDelayTimeUS = time; }
 	
@@ -73,6 +81,14 @@ public:
 	float getRXPower();
 	float getFPPower();
 	float getQuality();
+
+	int16_t getRXPPoll();
+	int16_t getRXPPollAck();
+	int16_t getRXPRange();
+
+	int16_t getFPPPoll();
+	int16_t getFPPPollAck();
+	int16_t getFPPRange();
 	
 	boolean isAddressEqual(DW1000Device* device);
 	boolean isShortAddressEqual(DW1000Device* device);
@@ -89,6 +105,14 @@ public:
 	void    noteActivity();
 	boolean isInactive();
 
+	int16_t RXPPoll;
+	int16_t RXPPollAck;
+	int16_t RXPRange;
+
+	int16_t FPPPoll;
+	int16_t FPPPollAck;
+	int16_t FPPRange;
+
 
 private:
 	//device ID
@@ -102,6 +126,8 @@ private:
 	int16_t _RXPower;
 	int16_t _FPPower;
 	int16_t _quality;
+
+
 	
 	void randomShortAddress();
 	

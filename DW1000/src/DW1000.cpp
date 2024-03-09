@@ -1813,7 +1813,7 @@ void DW1000Class::getReceiveTimestamp(DW1000Time &time)
 	readBytes(RX_TIME, RX_STAMP_SUB, rxTimeBytes, LEN_RX_STAMP);
 	time.setTimestamp(rxTimeBytes);
 	// correct timestamp (i.e. consider range bias)
-	correctTimestamp(time);
+	//correctTimestamp(time);
 }
 
 // TODO check function, different type violations between byte and int

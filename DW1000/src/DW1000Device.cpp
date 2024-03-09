@@ -74,6 +74,15 @@ void DW1000Device::setFPPower(float FPPower) { _FPPower = round(FPPower*100); }
 
 void DW1000Device::setQuality(float quality) { _quality = round(quality*100); }
 
+//---------- MY ----------
+void DW1000Device::setRXPPoll(float RXPower) { RXPPoll = round(abs(RXPower)*100); }
+void DW1000Device::setRXPPollAck(float RXPower) { RXPPollAck = round(abs(RXPower)*100); }
+void DW1000Device::setRXPRange(float RXPower) { RXPRange = round(abs(RXPower)*100); }
+
+void DW1000Device::setFPPPoll(float FPPower) { FPPPoll = round(abs(FPPower)*100); }
+void DW1000Device::setFPPPollAck(float FPPower) { FPPPollAck = round(abs(FPPower)*100); }
+void DW1000Device::setFPPRange(float FPPower) { FPPRange = round(abs(FPPower)*100); }
+
 
 byte* DW1000Device::getByteAddress() {
 	return _ownAddress;
@@ -121,6 +130,15 @@ float DW1000Device::getRXPower() { return float(_RXPower)/100.0f; }
 float DW1000Device::getFPPower() { return float(_FPPower)/100.0f; }
 
 float DW1000Device::getQuality() { return float(_quality)/100.0f; }
+
+//---------- MY ----------
+int16_t DW1000Device::getRXPPoll() { return RXPPoll; }
+int16_t DW1000Device::getRXPPollAck() { return RXPPollAck; }
+int16_t DW1000Device::getRXPRange() { return RXPRange; }
+
+int16_t DW1000Device::getFPPPoll() { return FPPPoll; }
+int16_t DW1000Device::getFPPPollAck() { return FPPPollAck; }
+int16_t DW1000Device::getFPPRange() { return FPPRange; }
 
 
 void DW1000Device::randomShortAddress() {
